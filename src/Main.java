@@ -16,9 +16,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Map map = new Map();
-        Game game = new Game();
-
         View view = new View();
         Scene scene = new Scene(view);
         primaryStage.setTitle("Tower Defense");

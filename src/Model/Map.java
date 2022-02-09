@@ -1,9 +1,12 @@
 package Model;
 
+import Controller.GameController;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -40,8 +43,6 @@ public class Map extends Group {
         this.grid = new TypeCase[this.NB_CASE_X][this.NB_CASE_Y];
 
         this.generateMap();
-
-        Platform.runLater(this::creeMap);
     }
 
     private void generateMap() {
@@ -112,10 +113,13 @@ public class Map extends Group {
                     this.caseMap[i][j].setImage(this.imageVide);
                 } else if (this.grid[i][j] == TypeCase.CHEMIN) {
                     this.caseMap[i][j].setImage(this.imageChemin);
+                    this.caseMap[i][j].setId("chemin");
                 } else if (this.grid[i][j] == TypeCase.EMPLTOUR) {
                     this.caseMap[i][j].setImage(this.imageEmplacementTour);
+                    this.caseMap[i][j].setId("emplacementTour");
                 } else if (this.grid[i][j] == TypeCase.TOUR) {
                     this.caseMap[i][j].setImage(this.imageTour);
+                    this.caseMap[i][j].setId("tour");
                 }
             }
         }

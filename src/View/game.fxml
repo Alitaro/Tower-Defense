@@ -7,10 +7,12 @@
 
 <?import Model.Map?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="650" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GameController">
 
    <Pane layoutY="50" maxHeight="600" maxWidth="600">
-      <Map fx:id="map" />
+      <Map fx:id="map"/>
    </Pane>
 
    <Label layoutX="1.0" layoutY="14.0" prefHeight="16.0" prefWidth="71.0" text="Round" />
@@ -20,7 +22,9 @@
    <Label fx:id="gold" layoutX="402.0" layoutY="14.0" prefHeight="16.0" prefWidth="29.0" text="0" />
 
    <Label layoutX="634.0" layoutY="71.0" text="Shop" />
-   <Button layoutX="622.0" layoutY="123.0" mnemonicParsing="false" onAction="#buyTower" text="Tower" />
+   <ImageView id="shop_tower" fitHeight="60.0" fitWidth="60.0" layoutX="622.0" layoutY="123.0" preserveRatio="true" onDragDetected="#dragDetected" onDragDone="#dragDone" onDragOver="#dragOver" onDragDropped="#dragDropped">
+      <Image preserveRatio="true" requestedHeight="60" requestedWidth="60" smooth="true" url="@../Ressources/image/tour.png" />
+   </ImageView>
    <Button layoutX="64.0" layoutY="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="40.0" onAction="#wave" text="|>" />
 
 </AnchorPane>
